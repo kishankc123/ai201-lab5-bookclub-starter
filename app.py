@@ -35,6 +35,9 @@ def create_app(config=None):
     with app.app_context():
         db.create_all()
 
+    @app.route("/")
+    def index():
+        return {"status": "ok"}
     return app
 
 
